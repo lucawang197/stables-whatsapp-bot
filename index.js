@@ -4,7 +4,15 @@ const { handleIncomingMessage } = require('./src/messageHandler');
 const { info, error } = require('./src/logger');
 
 const client = new Client({
-  authStrategy: new LocalAuth()
+  authStrategy: new LocalAuth(),
+  puppeteer: {
+    executablePath: '/usr/bin/chromium-browser', // 系统Chrome路径
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox', // Linux必需的安全参数[^1]
+      '--disable-dev-shm-usage'   // 避免/dev/shm内存不足
+    ]
+  }
 });
 
 client.on('qr', (qr) => {
