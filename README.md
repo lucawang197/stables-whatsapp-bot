@@ -7,7 +7,7 @@ Done, we will settle USDT 7,829.15 (6672/0.8522) for you, could you please confi
 curl --request POST \
   --url https://dev.stablesapi.com/api/v1/trading \
   --header 'content-type: application/json' \
-  --header 'x-api-key: ErmlWnUSvHbf/f+7uKptTSPvfXYE6XX2CfshOK5Ai5I=' \
+  --header 'x-api-key: XXX' \
   --data '{
   "client_id": 2,
   "transaction_type": "EUR-USDT",
